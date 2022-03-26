@@ -1,0 +1,4 @@
+webbpsf
+matplotlib
+numpy
+stsynphot
