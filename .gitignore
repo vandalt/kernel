@@ -150,7 +150,7 @@ dmypy.json
 cython_debug/
 
 # Other files
-pipeline_calibrated_data_*
+data/
 plots/
 *.fits
 info_kernel.txt
