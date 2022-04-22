@@ -51,8 +51,7 @@ WL_OVERSIZEFACTOR = 0.1  # increase filter wl support by this amount to 'oversiz
 pix_arcsec = 0.0656  # nominal isotropic pixel scale - refine later
 pix_rad = pix_arcsec * np.pi / (60 * 60 * 180)
 pupilfile_nrm = "MASK_NRM.fits"
-# pupilfile_clear = "CLEARP_CUSTOM.fits"
-pupilfile_clear = "CLEARP_WF.fits"
+pupilfile_clear = "CLEARP_CUSTOM.fits"
 pupil_files = {
     "NRM": pupilfile_nrm,
     "CLEARP": pupilfile_clear,
