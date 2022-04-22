@@ -1,3 +1,2 @@
 #!/usr/bin/bash
-dfits /home/vandal/Documents/jwst/data/AMI_commssioning_simulations_mirage_pipeline_implaneia/pipeline_calibrated_data_*/*calints.fits | fitsort FILENAME TARGPROP PUPIL PATTTYPE PATT_NUM SUBARRAY SUBPXPTS | rg NRM -v
-# dfits /home/vandal/Documents/jwst/data/AMI_commssioning_simulations_mirage_pipeline_implaneia/pipeline_calibrated_data_*/*.fits | fitsort PUPIL | rg NRM -v
+dfits $1/*cal*.fits | fitsort FILENAME TARGPROP PUPIL PATTTYPE PATT_NUM SUBARRAY SUBPXPTS | rg NRM -v
