@@ -11,32 +11,12 @@ import webbpsf
 import matplotlib.pyplot as plt
 from astropy.io import fits
 import numpy as np
+from scipy.ndimage import rotate
 
 niriss = webbpsf.NIRISS()
 
 # Set F430M filter so that auto_pupil uses CLEARP
 niriss.filter = "F430M"
-
-# %%
-# Calculate and plot PSF
-psfits, wfs = niriss.calc_psf(display=True, return_intermediates=True)
-plt.show()
-
-# %%
-# We want to use the image on bottom left
-wf = wfs[-2]
-
-# %%
-plt.imshow(wf.amplitude >= 1e-3, origin="lower")
-plt.show()
-
-# %%
-wfits = wf.as_fits()[0]
-whdr = wfits.header
-wdata = (np.sqrt(wfits.data) >= 1e-3).astype(float)
-
-hdul_wf = fits.PrimaryHDU(data=wdata, header=whdr)
-hdul_wf.writeto("CLEARP_WF.fits", overwrite=True)
 
 # %% [markdown]
 # Now, use optical elements separately
@@ -82,5 +62,17 @@ plt.show()
 # %%
 import xaosim
 
+pupil = xaosim.pupil.JWST(1024, pscale=0.0064486953125)
 
-pupil = xaosim.pupil.JWST(1024, pscale=0.00656)
+
+# %%
+plt.subplot(1, 3, 1)
+plt.imshow(data, origin="lower")
+plt.title("WebbPSF")
+plt.subplot(1, 3, 2)
+plt.imshow(pupil)
+plt.title("Current xaosim")
+plt.subplot(1, 3, 3)
+plt.imshow(pupil_new)
+plt.title("This PR")
+plt.show()
