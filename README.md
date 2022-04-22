@@ -1,7 +1,11 @@
-# Kernel
+# Misc kernel phase codes
 
-Codes I used to learn kernel phase.
-
+- `tutorials`: Tutorials from external sources (e.g. xara) go there
+- `simulate`: Code to generate synthetic kernel phase data (e.g. with ami_sim)
+- `pipeline`: Draft/test code to test things for xara or jwst pipeline
+  - `badpix`: Things related to bad pixel corrections
+  - `pupil`: Things related to discrete pupil model generation
+  - `analysis`: Kernel phase extraction and fitting with xara or other tools
 
 ## Bad pixel correction script
 For the badpixel correction script, the method used is the one from
