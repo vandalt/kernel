@@ -2,6 +2,8 @@
 
 - `tutorials`: Tutorials from external sources (e.g. xara) go there
 - `simulate`: Code to generate synthetic kernel phase data (e.g. with ami_sim)
+- `pupil_masks`: Pupil mask fits files (the `MASK_*.fits` are the ones from
+  Calwebb-kpi stage 3 made by Rachel and Jens).
 - `pipeline`: Draft/test code to test things for xara or jwst pipeline
   - `badpix`: Things related to bad pixel corrections
   - `pupil`: Things related to discrete pupil model generation
