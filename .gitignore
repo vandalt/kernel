@@ -151,3 +151,4 @@ plots/
 *.fits
 info_kernel.txt
 *.pdf
+*.png
